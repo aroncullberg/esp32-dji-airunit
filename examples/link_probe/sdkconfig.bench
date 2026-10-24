@@ -1,0 +1,4 @@
+# Temporary car bench: GPS disconnected, UART2 exclusively assigned to DJI.
+CONFIG_DJI_EXAMPLE_UART=2
+CONFIG_DJI_EXAMPLE_TX=2
+CONFIG_DJI_EXAMPLE_RX=42

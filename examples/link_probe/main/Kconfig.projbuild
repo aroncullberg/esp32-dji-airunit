@@ -1,0 +1,14 @@
+menu "DJI bench example"
+    config DJI_EXAMPLE_UART
+        int "Exclusive UART number (-1 disables)"
+        range -1 2
+        default -1
+    config DJI_EXAMPLE_TX
+        int "ESP TX GPIO to DJI RX (-1 disables)"
+        range -1 48
+        default -1
+    config DJI_EXAMPLE_RX
+        int "ESP RX GPIO from DJI TX (-1 disables)"
+        range -1 48
+        default -1
+endmenu

@@ -1,0 +1,7 @@
+version: "0.1.0"
+description: "DJI MSP status and character steering OSD for ESP-IDF"
+license: "GPL-3.0-only"
+targets:
+  - esp32s3
+dependencies:
+  idf: ">=6.1,<6.2"

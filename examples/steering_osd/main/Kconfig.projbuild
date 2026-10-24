@@ -1,0 +1,40 @@
+menu "DJI bench example"
+    config DJI_EXAMPLE_UART
+        int "Exclusive UART number (-1 disables)"
+        range -1 2
+        default -1
+    config DJI_EXAMPLE_TX
+        int "ESP TX GPIO to DJI RX (-1 disables)"
+        range -1 48
+        default -1
+    config DJI_EXAMPLE_RX
+        int "ESP RX GPIO from DJI TX (-1 disables)"
+        range -1 48
+        default -1
+    config DJI_EXAMPLE_OSD_COLUMNS
+        int "Fallback OSD canvas columns (when not announced)"
+        range 30 60
+        default 53
+        help
+            Set this to the actual goggles canvas width if announced=0.
+            An incoming valid canvas announcement overrides this fallback.
+    config DJI_EXAMPLE_OSD_ROWS
+        int "Fallback OSD canvas rows (when not announced)"
+        range 16 22
+        default 20
+        help
+            Set this to the actual goggles canvas height if announced=0.
+    config DJI_EXAMPLE_CANVAS_TEST
+        bool "Canvas border test (replace normal OSD)"
+        default n
+        help
+            Draw the four canvas edges, corner markers, center and size label.
+            Adjust fallback columns/rows until the border fits the visible grid.
+            Disable to return to the telemetry text and tilted steering arc.
+    config DJI_EXAMPLE_NATIVE_BATTERY
+        bool "Send synthetic battery telemetry to native DJI readout"
+        default y
+        help
+            Send explicit demo battery values using MSP_BATTERY_STATE, with
+            DisplayPort-independent reporting. Values live in playground.hpp.
+endmenu
